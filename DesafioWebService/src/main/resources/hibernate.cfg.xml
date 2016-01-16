@@ -3,8 +3,15 @@
 <hibernate-configuration>
     <session-factory>
         <!-- Mapeamento das classes Java -->
-        <!--
-        <mapping class="br.ufms.desafio.model.bean.Aluno" />
-        -->
+        <mapping class="br.ufms.desafio.model.bean.Aluno"/>
+        <mapping class="br.ufms.desafio.model.bean.Deficiencia"/>
+        <mapping class="br.ufms.desafio.model.bean.Endereco"/>
+        <mapping class="br.ufms.desafio.model.bean.Escola"/>
+        <mapping class="br.ufms.desafio.model.bean.Jogador"/>
+        <mapping class="br.ufms.desafio.model.bean.Municipio"/>
+        <mapping class="br.ufms.desafio.model.bean.Professor"/>
+        <mapping class="br.ufms.desafio.model.bean.Responsavel"/>
+        <mapping class="br.ufms.desafio.model.bean.Turma"/>
+        <mapping class="br.ufms.desafio.model.bean.Usuario"/>
     </session-factory>
 </hibernate-configuration>

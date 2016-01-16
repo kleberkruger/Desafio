@@ -14,23 +14,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.ufms.desafio.app;
-
-import java.util.HashMap;
-import java.util.Map;
-import javax.ws.rs.core.Application;
+package br.ufms.desafio.model.bean;
 
 /**
  *
  * @author kleberkruger
  */
-public class DesafioApp extends Application {
+public enum Titulacao {
+    
+    GRADUANDO, GRADUADO, ESPECIALISTA, MESTRE, DOUTOR, POS_DOUTOR;
 
     @Override
-    public Map<String, Object> getProperties() {
-        Map<String, Object> properties = new HashMap<>();
-        // Configura o pacote para fazer scan das classes com anotações REST.
-        properties.put("jersey.config.server.provider.packages", "br.ufms.desafio");
-        return properties;
+    public String toString() {
+        return super.toString();
     }
 }
