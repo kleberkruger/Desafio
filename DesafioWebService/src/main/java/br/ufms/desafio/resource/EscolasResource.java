@@ -16,10 +16,20 @@
  */
 package br.ufms.desafio.resource;
 
+import br.ufms.desafio.controller.EscolaService;
+import br.ufms.desafio.model.bean.Escola;
+import br.ufms.desafio.util.Response;
+import java.util.List;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -31,5 +41,43 @@ import org.springframework.stereotype.Component;
 @Consumes(MediaType.APPLICATION_JSON + ";charset=utf-8")
 @Component
 public class EscolasResource {
-    
+
+    @Autowired
+    private EscolaService service;
+
+    @GET
+    public List<Escola> get() {
+        return service.getAll();
+    }
+
+    @GET
+    @Path("{id}")
+    public Escola get(@PathParam("id") long id) {
+        return (Escola) service.get(id);
+    }
+
+    @POST
+    public Response post(Escola bean) {
+        service.save(bean);
+        return Response.Ok("Objeto salvo com sucesso");
+    }
+
+    @PUT
+    public Response put(Escola bean) {
+        service.save(bean);
+        return Response.Ok("Objeto atualizado com sucesso");
+    }
+
+    @DELETE
+    public Response delete(Escola bean) {
+        service.delete(bean);
+        return Response.Ok("Objeto deletado com sucesso");
+    }
+
+    @DELETE
+    @Path("{id}")
+    public Response delete(@PathParam("id") long id) {
+        service.delete(id);
+        return Response.Ok("Objeto deletado com sucesso");
+    }
 }

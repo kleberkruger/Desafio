@@ -16,56 +16,67 @@
  */
 package br.ufms.desafio.resource;
 
+import br.ufms.desafio.controller.GenericService;
+import br.ufms.desafio.model.dao.HibernateDAO;
+import br.ufms.desafio.util.Response;
+import java.util.List;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
  * @author kleberkruger
+ * @param <E>
+ * @param <S>
  */
 @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 @Consumes(MediaType.APPLICATION_JSON + ";charset=utf-8")
-@Component
-public class GenericResource /*<E, S extends GenericService<E, ? extends HibernateDAO<E>>>*/ {
+public class GenericResource <E, S extends GenericService<E, ? extends HibernateDAO<E>>> {
 
-//    @Autowired
-//    private S service;
-//
-//    @GET
-//    public List<E> get() {
-//        return service.getAll();
-//    }
-//
-//    @GET
-//    @Path("{id}")
-//    public E get(@PathParam("id") long id) {
-//        return (E) service.get(id);
-//    }
-//
-//    @POST
-//    public Response post(E bean) {
-//        service.save(bean);
-//        return Response.Ok("Objeto salvo com sucesso");
-//    }
-//
-//    @PUT
-//    public Response put(E bean) {
-//        service.save(bean);
-//        return Response.Ok("Objeto atualizado com sucesso");
-//    }
-//
-//    @DELETE
-//    public Response delete(E bean) {
-//        service.delete(bean);
-//        return Response.Ok("Objeto deletado com sucesso");
-//    }
-//
-//    @DELETE
-//    @Path("{id}")
-//    public Response delete(@PathParam("id") long id) {
-//        service.delete(id);
-//        return Response.Ok("Objeto deletado com sucesso");
-//    }
+    @Autowired
+    private S service;
+
+    @GET
+    public List<E> get() {
+        return service.getAll();
+    }
+
+    @GET
+    @Path("{id}")
+    public E get(@PathParam("id") long id) {
+        return (E) service.get(id);
+    }
+
+    @POST
+    public Response post(E bean) {
+        service.save(bean);
+        return Response.Ok("Objeto salvo com sucesso");
+    }
+
+    @PUT
+    public Response put(E bean) {
+        service.save(bean);
+        return Response.Ok("Objeto atualizado com sucesso");
+    }
+
+    @DELETE
+    public Response delete(E bean) {
+        service.delete(bean);
+        return Response.Ok("Objeto deletado com sucesso");
+    }
+
+    @DELETE
+    @Path("{id}")
+    public Response delete(@PathParam("id") long id) {
+        service.delete(id);
+        return Response.Ok("Objeto deletado com sucesso");
+    }
 }

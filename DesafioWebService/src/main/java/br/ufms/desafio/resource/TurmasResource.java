@@ -16,10 +16,20 @@
  */
 package br.ufms.desafio.resource;
 
+import br.ufms.desafio.controller.TurmaService;
+import br.ufms.desafio.model.bean.Turma;
+import br.ufms.desafio.util.Response;
+import java.util.List;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -32,4 +42,42 @@ import org.springframework.stereotype.Component;
 @Component
 public class TurmasResource {
     
+    @Autowired
+    private TurmaService service;
+
+    @GET
+    public List<Turma> get() {
+        return service.getAll();
+    }
+
+    @GET
+    @Path("{id}")
+    public Turma get(@PathParam("id") long id) {
+        return (Turma) service.get(id);
+    }
+
+    @POST
+    public Response post(Turma bean) {
+        service.save(bean);
+        return Response.Ok("Objeto salvo com sucesso");
+    }
+
+    @PUT
+    public Response put(Turma bean) {
+        service.save(bean);
+        return Response.Ok("Objeto atualizado com sucesso");
+    }
+
+    @DELETE
+    public Response delete(Turma bean) {
+        service.delete(bean);
+        return Response.Ok("Objeto deletado com sucesso");
+    }
+
+    @DELETE
+    @Path("{id}")
+    public Response delete(@PathParam("id") long id) {
+        service.delete(id);
+        return Response.Ok("Objeto deletado com sucesso");
+    }
 }
