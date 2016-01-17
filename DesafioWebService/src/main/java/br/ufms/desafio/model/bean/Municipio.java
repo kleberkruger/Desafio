@@ -44,7 +44,7 @@ public class Municipio implements Serializable {
 
     @Id
     @Column(name = "codigo", nullable = false)
-    private Integer codigo;
+    private Long codigo;
 
     @Column(name = "nome", nullable = false)
     private String nome;
@@ -55,14 +55,14 @@ public class Municipio implements Serializable {
     /**
      * @return the codigo
      */
-    public Integer getCodigo() {
+    public Long getCodigo() {
         return codigo;
     }
 
     /**
      * @param codigo the codigo to set
      */
-    public void setCodigo(Integer codigo) {
+    public void setCodigo(Long codigo) {
         this.codigo = codigo;
     }
 
