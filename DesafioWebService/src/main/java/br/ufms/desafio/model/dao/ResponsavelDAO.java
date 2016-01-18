@@ -25,7 +25,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @SuppressWarnings("unchecked")
-public class ResponsavelDAO extends HibernateDAO<Responsavel> {
+public class ResponsavelDAO extends JogadorDAO<Responsavel> {
 
     public ResponsavelDAO() {
         super(Responsavel.class);

@@ -25,6 +25,6 @@ import org.springframework.stereotype.Component;
  * @author kleberkruger
  */
 @Component
-public class EscolaService extends GenericService<Escola, EscolaDAO> {
+public class EscolaService extends UsuarioService<Escola, EscolaDAO> {
     
 }

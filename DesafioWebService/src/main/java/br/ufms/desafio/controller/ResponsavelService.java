@@ -25,6 +25,6 @@ import org.springframework.stereotype.Component;
  * @author kleberkruger
  */
 @Component
-public class ResponsavelService extends GenericService<Responsavel, ResponsavelDAO> {
+public class ResponsavelService extends JogadorService<Responsavel, ResponsavelDAO> {
 
 }

@@ -42,7 +42,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Endereco.findByCodigo", query = "SELECT e FROM Endereco e WHERE e.codigo = :codigo"),
     @NamedQuery(name = "Endereco.findByLogradouro", query = "SELECT e FROM Endereco e WHERE e.logradouro = :logradouro"),
     @NamedQuery(name = "Endereco.findByNumero", query = "SELECT e FROM Endereco e WHERE e.numero = :numero"),
-    @NamedQuery(name = "Endereco.findBySN", query = "SELECT e FROM Endereco e WHERE e.sn = :sn"),
+    @NamedQuery(name = "Endereco.findBySemNumero", query = "SELECT e FROM Endereco e WHERE e.sn = :sn"),
     @NamedQuery(name = "Endereco.findByComplemento", query = "SELECT e FROM Endereco e WHERE e.complemento = :complemento"),
     @NamedQuery(name = "Endereco.findByBairro", query = "SELECT e FROM Endereco e WHERE e.bairro = :bairro"),
     @NamedQuery(name = "Endereco.findByCep", query = "SELECT e FROM Endereco e WHERE e.cep = :cep")

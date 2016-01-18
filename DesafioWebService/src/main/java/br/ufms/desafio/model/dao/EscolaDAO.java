@@ -25,7 +25,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @SuppressWarnings("unchecked")
-public class EscolaDAO extends HibernateDAO<Escola> {
+public class EscolaDAO extends UsuarioDAO<Escola> {
     
     public EscolaDAO() {
         super(Escola.class);

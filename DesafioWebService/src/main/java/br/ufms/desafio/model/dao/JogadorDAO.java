@@ -14,21 +14,28 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.ufms.desafio.controller;
+package br.ufms.desafio.model.dao;
 
-import br.ufms.desafio.model.bean.Aluno;
-import br.ufms.desafio.model.dao.AlunoDAO;
+import br.ufms.desafio.model.bean.Jogador;
+import java.util.Date;
 import java.util.List;
-import org.springframework.stereotype.Component;
+import org.hibernate.Query;
 
 /**
  *
  * @author kleberkruger
+ * @param <E>
  */
-@Component
-public class AlunoService extends JogadorService<Aluno, AlunoDAO> {
+@SuppressWarnings("unchecked")
+public class JogadorDAO<E extends Jogador> extends UsuarioDAO<E> {
 
-    public List<Aluno> findByName(String name) {
-        return db.findByNome(name);
+    public JogadorDAO(Class<E> clazz) {
+        super(clazz);
+    }
+
+    public List<E> findByDataNascimento(Date nascimento) {
+        Query q = getSession().createQuery("FROM Jogador WHERE nascimento = ?");
+        q.setDate(0, nascimento);
+        return q.list();
     }
 }

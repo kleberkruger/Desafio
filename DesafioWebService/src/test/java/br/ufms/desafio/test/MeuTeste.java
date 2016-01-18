@@ -14,21 +14,22 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.ufms.desafio.controller;
-
-import br.ufms.desafio.model.bean.Aluno;
-import br.ufms.desafio.model.dao.AlunoDAO;
-import java.util.List;
-import org.springframework.stereotype.Component;
+package br.ufms.desafio.test;
 
 /**
  *
  * @author kleberkruger
  */
-@Component
-public class AlunoService extends JogadorService<Aluno, AlunoDAO> {
+public class MeuTeste {
 
-    public List<Aluno> findByName(String name) {
-        return db.findByNome(name);
+    public void iniciar() {
+
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        new MeuTeste().iniciar();
     }
 }

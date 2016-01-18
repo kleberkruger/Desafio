@@ -16,19 +16,21 @@
  */
 package br.ufms.desafio.controller;
 
-import br.ufms.desafio.model.bean.Aluno;
-import br.ufms.desafio.model.dao.AlunoDAO;
+import br.ufms.desafio.model.bean.Jogador;
+import br.ufms.desafio.model.dao.JogadorDAO;
+import java.util.Date;
 import java.util.List;
-import org.springframework.stereotype.Component;
 
 /**
  *
  * @author kleberkruger
+ * @param <E>
+ * @param <DAO>
  */
-@Component
-public class AlunoService extends JogadorService<Aluno, AlunoDAO> {
-
-    public List<Aluno> findByName(String name) {
-        return db.findByNome(name);
+public class JogadorService <E extends Jogador, DAO extends JogadorDAO<E>>
+        extends GenericService<E, DAO>{
+    
+    public List<E> findByDataNascimento(Date nascimento) {
+        return db.findByDataNascimento(nascimento);
     }
 }

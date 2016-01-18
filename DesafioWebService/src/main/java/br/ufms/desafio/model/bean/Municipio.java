@@ -43,7 +43,7 @@ public class Municipio implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name = "codigo", nullable = false)
+    @Column(name = "codigo", nullable = false, unique = true)
     private Long codigo;
 
     @Column(name = "nome", nullable = false)

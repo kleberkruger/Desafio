@@ -66,6 +66,7 @@ public class Aluno extends Jogador implements Serializable {
     @ManyToMany(mappedBy = "alunos")
     private List<Responsavel> responsaveis;
 
+    @XmlTransient
     @ManyToMany(mappedBy = "alunos")
     private List<Turma> turmas;
 

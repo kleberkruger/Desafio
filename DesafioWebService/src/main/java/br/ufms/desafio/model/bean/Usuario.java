@@ -63,10 +63,10 @@ public class Usuario implements Serializable {
     @Column(name = "nome", nullable = false)
     protected String nome;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email", nullable = false, unique = true)
     protected String email;
 
-    @Column(name = "usuario", nullable = false)
+    @Column(name = "usuario", nullable = false, unique = true)
     protected String usuario;
 
     @Column(name = "senha", nullable = false)

@@ -17,8 +17,6 @@
 package br.ufms.desafio.model.dao;
 
 import br.ufms.desafio.model.bean.Aluno;
-import java.util.List;
-import org.hibernate.Query;
 import org.springframework.stereotype.Component;
 
 /**
@@ -27,22 +25,9 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @SuppressWarnings("unchecked")
-public class AlunoDAO extends HibernateDAO<Aluno> {
+public class AlunoDAO extends JogadorDAO<Aluno> {
 
     public AlunoDAO() {
         super(Aluno.class);
     }
-
-    /**
-     * Busca um aluno pelo nome.
-     *
-     * @param nome
-     * @return
-     */
-    public List<Aluno> findByName(String nome) {
-        Query q = getSession().createQuery("FROM Aluno WHERE LOWER(nome) LIKE LOWER(?)");
-        q.setString(0, "%" + nome + "%");
-        return q.list();
-    }
-    
 }

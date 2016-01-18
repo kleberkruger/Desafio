@@ -53,7 +53,25 @@ public class EscolasResource {
     @GET
     @Path("{id}")
     public Escola get(@PathParam("id") long id) {
-        return (Escola) service.get(id);
+        return service.get(id);
+    }
+
+    @GET
+    @Path("/nome/{nome}")
+    public List<Escola> findByNome(@PathParam("nome") String nome) {
+        return service.findByNome(nome);
+    }
+    
+    @GET
+    @Path("/email/{email}")
+    public List<Escola> findByEmail(@PathParam("email") String email) {
+        return service.findByEmail(email);
+    }
+    
+    @GET
+    @Path("/usuario/{usuario}")
+    public List<Escola> findByUsuario(@PathParam("usuario") String usuario) {
+        return service.findByUsuario(usuario);
     }
 
     @POST
