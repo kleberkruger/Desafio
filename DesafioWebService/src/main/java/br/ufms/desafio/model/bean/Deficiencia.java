@@ -48,12 +48,12 @@ public class Deficiencia implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "codigo", nullable = false)
     @Enumerated(EnumType.ORDINAL)
     private TipoDeficiencia codigo;
 
-    @Column(name = "tipo", nullable = false)
+    @Column(name = "tipo", nullable = false, unique = true)
     @Enumerated(EnumType.STRING)
     private TipoDeficiencia tipo;
 

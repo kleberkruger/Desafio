@@ -60,7 +60,7 @@ public class Turma implements Serializable {
     private String nome;
 
     @JoinColumn(name = "codigo_escola", referencedColumnName = "codigo")
-    @ManyToOne
+    @ManyToOne(optional = true)
     private Escola escola;
 
     @JoinColumn(name = "codigo_professor", referencedColumnName = "codigo")
@@ -74,7 +74,7 @@ public class Turma implements Serializable {
     @ManyToMany
     private List<Aluno> alunos;
 
-    @Column(name = "periodo")
+    @Column(name = "periodo", nullable = true)
     @Enumerated(EnumType.STRING)
     private Periodo periodo;
 

@@ -44,7 +44,7 @@ public class Responsavel extends Jogador implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Column(name = "cpf", nullable = false)
+    @Column(name = "cpf", nullable = true)
     private String cpf;
 
     @JoinTable(name = "responsavel_aluno", joinColumns = {

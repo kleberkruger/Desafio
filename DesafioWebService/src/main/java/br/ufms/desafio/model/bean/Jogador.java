@@ -53,14 +53,14 @@ public class Jogador extends Usuario implements Serializable {
     /**
      * @return the nascimento
      */
-    public Date getNascimento() {
+    public Date getDataNascimento() {
         return nascimento;
     }
 
     /**
      * @param nascimento the nascimento to set
      */
-    public void setNascimento(Date nascimento) {
+    public void setDataNascimento(Date nascimento) {
         this.nascimento = nascimento;
     }
 }

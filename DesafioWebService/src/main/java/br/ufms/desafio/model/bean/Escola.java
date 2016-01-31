@@ -18,7 +18,6 @@ package br.ufms.desafio.model.bean;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -82,7 +81,6 @@ public class Escola extends Usuario implements Serializable {
     /**
      * @return the professores
      */
-    @XmlTransient
     public List<Professor> getProfessores() {
         return professores;
     }

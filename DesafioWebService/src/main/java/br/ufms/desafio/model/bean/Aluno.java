@@ -66,7 +66,6 @@ public class Aluno extends Jogador implements Serializable {
     @ManyToMany(mappedBy = "alunos")
     private List<Responsavel> responsaveis;
 
-    @XmlTransient
     @ManyToMany(mappedBy = "alunos")
     private List<Turma> turmas;
 
@@ -119,14 +118,14 @@ public class Aluno extends Jogador implements Serializable {
     /**
      * @return the inicio
      */
-    public Date getInicio() {
+    public Date getDataInicio() {
         return inicio;
     }
 
     /**
      * @param inicio the inicio to set
      */
-    public void setInicio(Date inicio) {
+    public void setDataInicio(Date inicio) {
         this.inicio = inicio;
     }
 

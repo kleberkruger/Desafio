@@ -184,14 +184,14 @@ public class Usuario implements Serializable {
     /**
      * @return the criacao
      */
-    public Date getCriacao() {
+    public Date getDataCriacao() {
         return criacao;
     }
 
     /**
      * @param criacao the criacao to set
      */
-    public void setCriacao(Date criacao) {
+    public void setDataCriacao(Date criacao) {
         this.criacao = criacao;
     }
 
