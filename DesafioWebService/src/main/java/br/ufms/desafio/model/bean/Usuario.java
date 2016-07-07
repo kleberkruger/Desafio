@@ -51,7 +51,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Usuario.findByUsuario", query = "SELECT u FROM Usuario u WHERE u.usuario = :usuario"),
     @NamedQuery(name = "Usuario.findByDataCriacao", query = "SELECT u FROM Usuario u WHERE u.criacao = :criacao")
 })
-public class Usuario implements Serializable {
+public class Usuario extends Entidade implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -63,7 +63,7 @@ public class Usuario implements Serializable {
     @Column(name = "nome", nullable = false)
     protected String nome;
 
-    @Column(name = "email", nullable = false, unique = true)
+    @Column(name = "email", nullable = true, unique = true)
     protected String email;
 
     @Column(name = "usuario", nullable = false, unique = true)
@@ -212,7 +212,6 @@ public class Usuario implements Serializable {
      */
     @Override
     public boolean equals(Object object) {
-        super.equals(object);
         if (object.getClass() != this.getClass()) {
             return false;
         }

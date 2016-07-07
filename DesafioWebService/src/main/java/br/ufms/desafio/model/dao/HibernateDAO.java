@@ -16,6 +16,7 @@
  */
 package br.ufms.desafio.model.dao;
 
+import br.ufms.desafio.model.bean.Entidade;
 import java.io.Serializable;
 import java.util.List;
 import org.hibernate.Criteria;
@@ -30,7 +31,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @param <E>
  */
 @SuppressWarnings("unchecked")
-public class HibernateDAO<E> {
+public class HibernateDAO<E extends Entidade> {
 
     protected Class<E> clazz;
     protected Session session;

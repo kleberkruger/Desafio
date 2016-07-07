@@ -17,6 +17,7 @@
 package br.ufms.desafio.test.junit;
 
 import br.ufms.desafio.controller.GenericService;
+import br.ufms.desafio.model.bean.Entidade;
 import br.ufms.desafio.model.dao.HibernateDAO;
 import br.ufms.desafio.test.junit.util.SpringUtil;
 
@@ -38,17 +39,11 @@ import org.junit.Test;
  * @param <E>
  * @param <S>
  */
-public abstract class JUnitTestBase<E, S extends GenericService<E, ? extends HibernateDAO<E>>> /*extends TestCase*/ {
+public abstract class JUnitTestBase<E extends Entidade, S extends GenericService<E, ? extends HibernateDAO<E>>> /*extends TestCase*/ {
 
     protected S service;
-    
-    private Class<S> serviceClass;
-    private Class<E> entityClass;
 
     public JUnitTestBase(Class<E> entityClass, Class<S> serviceClass) {
-        this.entityClass = entityClass;
-        this.serviceClass = serviceClass;
-        
         // Cria o "bean" pelo Spring.
         service = (S) SpringUtil.getInstance().getBean(serviceClass);
     }

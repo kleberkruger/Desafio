@@ -47,7 +47,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Turma.findByNome", query = "SELECT t FROM Turma t WHERE t.nome = :nome"),
     @NamedQuery(name = "Turma.findByPeriodo", query = "SELECT t FROM Turma t WHERE t.periodo = :periodo")
 })
-public class Turma implements Serializable {
+public class Turma extends Entidade implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

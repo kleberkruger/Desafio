@@ -16,6 +16,7 @@
  */
 package br.ufms.desafio.controller;
 
+import br.ufms.desafio.model.bean.Entidade;
 import br.ufms.desafio.model.dao.HibernateDAO;
 import java.io.Serializable;
 import java.util.List;
@@ -29,7 +30,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @param <DAO>
  * @param <E>
  */
-public class GenericService <E, DAO extends HibernateDAO<E>> {
+public class GenericService <E extends Entidade, DAO extends HibernateDAO<E>> {
 
     @Autowired
     protected DAO db;

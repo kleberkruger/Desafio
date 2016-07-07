@@ -17,6 +17,7 @@
 package br.ufms.desafio.resource;
 
 import br.ufms.desafio.controller.GenericService;
+import br.ufms.desafio.model.bean.Entidade;
 import br.ufms.desafio.model.dao.HibernateDAO;
 import br.ufms.desafio.util.Response;
 import java.util.List;
@@ -39,7 +40,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 @Consumes(MediaType.APPLICATION_JSON + ";charset=utf-8")
-public class GenericResource <E, S extends GenericService<E, ? extends HibernateDAO<E>>> {
+public class GenericResource <E extends Entidade, S extends GenericService<E, ? extends HibernateDAO<E>>> {
 
     @Autowired
     private S service;

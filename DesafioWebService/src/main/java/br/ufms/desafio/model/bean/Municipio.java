@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Municipio.findByNome", query = "SELECT m FROM Municipio m WHERE m.nome = :nome"),
     @NamedQuery(name = "Municipio.findByUf", query = "SELECT m FROM Municipio m WHERE m.uf = :uf")
 })
-public class Municipio implements Serializable {
+public class Municipio extends Entidade implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

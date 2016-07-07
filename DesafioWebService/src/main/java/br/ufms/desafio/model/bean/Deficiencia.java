@@ -43,7 +43,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Deficiencia.findAll", query = "SELECT d FROM Deficiencia d"),
     @NamedQuery(name = "Deficiencia.findByCodigo", query = "SELECT d FROM Deficiencia d WHERE d.codigo = :codigo"),
     @NamedQuery(name = "Deficiencia.findByTipo", query = "SELECT d FROM Deficiencia d WHERE d.tipo = :tipo")})
-public class Deficiencia implements Serializable {
+public class Deficiencia extends Entidade implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

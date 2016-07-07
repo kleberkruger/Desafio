@@ -42,6 +42,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "Aluno.findAll", query = "SELECT a FROM Aluno a"),
     @NamedQuery(name = "Aluno.findByCodigo", query = "SELECT a FROM Aluno a WHERE a.codigo = :codigo"),
+    @NamedQuery(name = "Aluno.findByEmailResponsavel", query = "SELECT a FROM Aluno a WHERE a.emailResponsavel = :emailResponsavel"),
     @NamedQuery(name = "Aluno.findBySerie", query = "SELECT a FROM Aluno a WHERE a.serie = :serie"),
     @NamedQuery(name = "Aluno.findByDeficiente", query = "SELECT a FROM Aluno a WHERE a.deficiente = :deficiente"),
     @NamedQuery(name = "Aluno.findByDataInicio", query = "SELECT a FROM Aluno a WHERE a.inicio = :inicio")
@@ -49,11 +50,14 @@ import javax.xml.bind.annotation.XmlTransient;
 public class Aluno extends Jogador implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
+    @Column(name = "email_responsavel", nullable = true)
+    private String emailResponsavel;
 
-    @Column(name = "serie")
+    @Column(name = "serie", nullable = true)
     private Integer serie;
 
-    @Column(name = "deficiente")
+    @Column(name = "deficiente", nullable = true)
     private Boolean deficiente;
 
     @ManyToMany
@@ -69,9 +73,23 @@ public class Aluno extends Jogador implements Serializable {
     @ManyToMany(mappedBy = "alunos")
     private List<Turma> turmas;
 
-    @JoinColumn(name = "codigo_escola", referencedColumnName = "codigo")
+    @JoinColumn(name = "codigo_escola", referencedColumnName = "codigo", nullable = true)
     @ManyToOne
     private Escola escola;
+    
+    /**
+     * @return the emailResponsavel
+     */
+    public String getEmailResponsavel() {
+        return emailResponsavel;
+    }
+
+    /**
+     * @param emailResponsavel the emailResponsavel to set
+     */
+    public void setEmailResponsavel(String emailResponsavel) {
+        this.emailResponsavel = emailResponsavel;
+    }
 
     /**
      * @return the serie
