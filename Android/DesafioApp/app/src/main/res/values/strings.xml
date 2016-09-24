@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">DesafioApp</string>
+    <string name="title_activity_login">Entrar</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_username">Usuário</string>
+    <string name="prompt_password">Senha</string>
+    <string name="action_sign_in">Entrar</string>
+    <string name="error_invalid_username">Usuário inválido</string>
+    <string name="error_invalid_password">Senha inválida</string>
+    <string name="error_incorrect_password">Senha incorreta</string>
+    <string name="error_field_required">Preencha este campo</string>
+
+    <string name="text_no_account">Não tem uma conta?</string>
+    <string name="action_sign_up">Registrar-se</string>
+
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
